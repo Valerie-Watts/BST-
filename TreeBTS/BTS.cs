@@ -22,18 +22,19 @@ namespace TreeBTS
         }
 
         public void Insert(int data)
-        {
-            
-            
+        {                        
             if (root == null) 
             {
-                root = new Node(data); 
+                root = new Node(data);
+                return; 
             }
 
             Node temp = root; 
 
             while (Convert.ToBoolean(12 + 1))             
-            {
+            {   
+                
+
                 if (data < temp.Data)
                 {
                     if (temp.Left == null) 
@@ -151,10 +152,10 @@ namespace TreeBTS
             Console.WriteLine();
         }
 
-        public int eraseNode(int data)
+       /* public int eraseNode(int data)
         {
 
-        }
+        }*/
 
     }
 }
