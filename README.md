@@ -1,63 +1,63 @@
-# Árbol Binario de Búsqueda en C#
+# Binary Search Tree (BST) in C#
 
-## Descripción
-Los estudiantes deberán implementar un **Árbol Binario de Búsqueda (ABB)** en el lenguaje C# con las siguientes funcionalidades:
+## 📖 Descripción
+Este proyecto implementa un Árbol de Búsqueda Binaria (BST) en C#. Incluye operaciones como inserción, búsqueda, eliminación y recorrido del árbol en diferentes órdenes. Es ideal para entender estructuras de datos en C# y cómo gestionar árboles binarios de búsqueda.
 
-1. **Inserción de nodos** en el árbol.
-2. **Búsqueda de un valor** en el árbol.
-3. **Recorridos del árbol** en preorden, inorden y postorden.
-4. **Eliminación de un nodo** del árbol manteniendo sus propiedades.
+## 📌 Características
+- Insertar un nodo en el BST
+- Buscar un nodo en el BST
+- Eliminar un nodo del BST
+- Recorridos: Preorden, Inorden y Postorden
+- Interfaz de consola interactiva para probar las funcionalidades
 
-El programa permitirá al usuario ingresar valores y visualizar los recorridos correspondientes.
-
-## Instrucciones
-1. Implementar una clase que represente los nodos del árbol y otra que maneje la estructura del **Árbol Binario de Búsqueda**.
-2. Incluir métodos para insertar, buscar, eliminar y recorrer el árbol en **preorden, inorden y postorden**.
-3. Crear un menú en consola que permita al usuario realizar estas operaciones interactivamente.
-4. Entregar el código fuente en un repositorio de GitHub junto con un README explicativo que describa la implementación y los resultados obtenidos.
-
-## Uso
-Al ejecutar el programa, se mostrará un menú con las siguientes opciones:
-
+## 📝 Uso
+Cuando ejecutes el programa, verás un menú con opciones como:
 1. Insertar un nodo
-2. Buscar un valor
-3. Recorrer en preorden
-4. Recorrer en inorden
-5. Recorrer en postorden
+2. Buscar un nodo
+3. Imprimir en Preorden
+4. Imprimir en Inorden
+5. Imprimir en Postorden
 6. Eliminar un nodo
 7. Salir
 
-### Ejemplo de Uso
-Ejemplo de interacción con el usuario:
+Introduce el número de la opción deseada y sigue las instrucciones en pantalla.
 
-```plaintext
-Árbol Binario de Búsqueda
+## 🛠 Implementación
+La clase `BTS` representa un Árbol de Búsqueda Binaria. Sus principales métodos son:
+- **Insert(int data):** Agrega un nodo al árbol.
+- **Search(int data):** Busca un nodo en el árbol y muestra si existe o no.
+- **PreOrder(), InOrder(), PostOrder():** Recorridos del árbol.
+- **deleteNode(int value):** Elimina un nodo específico del árbol.
 
-¿Qué desea realizar?
-1. Insertar un nodo
-2. Buscar un valor
-3. Recorrer en preorden
-4. Recorrer en inorden
-5. Recorrer en postorden
-6. Eliminar un nodo
-7. Salir
+### Ejemplo de Código
+A continuación, se muestra un ejemplo de uso del BST en C#:
 
-Ingrese una opción: 1
-Ingrese el valor del nodo: 50
-Se ha insertado el nodo con valor: 50
-
-Ingrese una opción: 1
-Ingrese el valor del nodo: 30
-Se ha insertado el nodo con valor: 30
-
-Ingrese una opción: 1
-Ingrese el valor del nodo: 70
-Se ha insertado el nodo con valor: 70
-
-Ingrese una opción: 5
-Recorrido en postorden:
-30
-70
-50
+```csharp
+class Program
+{
+    static void Main(string[] args)
+    {
+        BTS tree = new BTS();
+        tree.Insert(50);
+        tree.Insert(30);
+        tree.Insert(70);
+        tree.Insert(20);
+        tree.Insert(40);
+        tree.Insert(60);
+        tree.Insert(80);
+        
+        Console.WriteLine("Inorden:");
+        tree.Inorder();
+        
+        Console.WriteLine("\nEliminando 50...");
+        tree.deleteNode(50);
+        
+        Console.WriteLine("Inorden después de eliminar 50:");
+        tree.Inorder();
+    }
+}
 ```
+
+## 🎯 Resultados
+Al ejecutar el programa, el usuario podrá realizar las operaciones mencionadas y visualizar el estado del BST en cada paso. Por ejemplo, al insertar y recorrer el árbol en inorden, se verá la estructura ordenada de los elementos. La eliminación de un nodo reorganizará el árbol para mantener sus propiedades.
 
