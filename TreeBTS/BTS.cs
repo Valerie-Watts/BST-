@@ -151,11 +151,57 @@ namespace TreeBTS
             PostOrder(root);
             Console.WriteLine();
         }
-
-       /* public int eraseNode(int data)
+        public Node deleteNode(Node currentNode, int data)
         {
+            if (currentNode == null) return null;
 
-        }*/
+            if (data < currentNode.Data)
+            {
+                currentNode.Left = deleteNode(currentNode.Left, data);
+            }
+            else if (data > currentNode.Data)
+            {
+                currentNode.Right = deleteNode(currentNode.Right, data);
+            }
+            else
+            {
+                if (currentNode.Left == null && currentNode.Right == null)
+                {
+                    currentNode = null;
+                    return null;
+                }
+                else if (currentNode.Left == null)
+                {
+                    Node temp = currentNode.Right;
+                    currentNode = null;
+                    return temp;
+                }
+                else if (currentNode.Right == null)
+                {
+                    Node temp = currentNode.Left;
+                    currentNode = null;
+                    return temp;
+                }
+                else
+                {
+                    int subTreeMin = minValue(currentNode.Right);
+                    currentNode.Data = subTreeMin;
+                    currentNode.Right = deleteNode(currentNode.Right, subTreeMin);
+                }
+            }
+            return currentNode;
+        }
+
+        public void deleteNode(int value) { root = deleteNode(root, value); }
+
+        public int minValue(Node currentNode)
+        {
+            while (currentNode.Left != null)
+            {
+                currentNode = currentNode.Left;
+            }
+            return currentNode.Data;
+        }
 
     }
 }

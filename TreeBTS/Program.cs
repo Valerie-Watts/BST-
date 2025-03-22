@@ -51,7 +51,9 @@ namespace TreeBTS
 
                         break;
                     case 6:
-
+                        Console.WriteLine("What number do you want to delete?"); 
+                        numb = Convert.ToInt32(Console.ReadLine());
+                        tree.deleteNode(numb); 
                         break;
                     case 7:
                         Console.WriteLine("Goodbye!");
