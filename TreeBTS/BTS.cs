@@ -9,7 +9,7 @@ namespace TreeBTS
 {
     class BTS
     {
-        public Node root;  // Root node of the Binary Search Tree (BST)
+        public Node root;
 
         // Constructor that initializes the BST with a root node containing the given data
         public BTS(int data)
